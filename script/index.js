@@ -1,14 +1,3 @@
-let services = [
-  { serviceIcon: '../assets/emergency.png', serviceNameBangla: 'জাতীয় জরুরি সেবা', serviceNameEnglish: 'National Emergency', serviceType: 'সার্বজনীন', serviceNumber: '999' },
-  { serviceIcon: '../assets/police.png', serviceNameBangla: 'পুলিশ', serviceNameEnglish: 'Police', serviceType: 'পুলিশ', serviceNumber: '999' },
-  { serviceIcon: '../assets/fire-service.png', serviceNameBangla: 'ফায়ার সার্ভিস', serviceNameEnglish: 'Fire Service', serviceType: 'ফায়ার', serviceNumber: '999' },
-  { serviceIcon: '../assets/ambulance.png', serviceNameBangla: 'অ্যাম্বুলেন্স', serviceNameEnglish: 'Ambulance', serviceType: 'স্বাস্থ্য', serviceNumber: '1994-999999' },
-  { serviceIcon: '../assets/emergency.png', serviceNameBangla: 'নারী ও শিশু সহায়তাস', serviceNameEnglish: 'Women & Child Helpline', serviceType: 'সহায়তা', serviceNumber: '109' },
-  { serviceIcon: '../assets/emergency.png', serviceNameBangla: 'দুদক', serviceNameEnglish: 'Anti-Corruption', serviceType: 'সরকারি', serviceNumber: '106' },
-  { serviceIcon: '../assets/electricity.png', serviceNameBangla: 'বিদ্যুৎ বিভ্রাট', serviceNameEnglish: 'Electricity Outage', serviceType: 'বিদ্যুৎ', serviceNumber: '16216' },
-  { serviceIcon: '../assets/brac.png', serviceNameBangla: '্র্যাক', serviceNameEnglish: 'Brac', serviceType: 'এনজিও', serviceNumber: '16445' },
-  { serviceIcon: '../assets/railway.png', serviceNameBangla: 'বাংলাদেশ রেলওয়ে', serviceNameEnglish: 'Bangladesh Railway', serviceType: 'পরিবহন', serviceNumber: '163' },
-]
 
 
 
@@ -26,20 +15,17 @@ const buttons = document.querySelectorAll('.copy-btn')
 
 
 
-
-function showCustomAlert(icon, name, type, message) {
-  document.getElementById("serviceIcon").src = icon;
-  document.getElementById("serviceName").innerText = message + ' ' + name;
-  document.getElementById("serviceNumber").innerText = type;
-  document.getElementById("customAlert").classList.remove("hidden");
-}
-
-customAlertBtn.addEventListener("click", () => {
-  customAlert.classList.add("hidden");
-});
-
-
-
+let services = [
+  { serviceIcon: '../assets/emergency.png', serviceNameBangla: 'জাতীয় জরুরি সেবা', serviceNameEnglish: 'National Emergency', serviceType: 'সার্বজনীন', serviceNumber: '999' },
+  { serviceIcon: '../assets/police.png', serviceNameBangla: 'পুলিশ', serviceNameEnglish: 'Police', serviceType: 'পুলিশ', serviceNumber: '999' },
+  { serviceIcon: '../assets/fire-service.png', serviceNameBangla: 'ফায়ার সার্ভিস', serviceNameEnglish: 'Fire Service', serviceType: 'ফায়ার', serviceNumber: '999' },
+  { serviceIcon: '../assets/ambulance.png', serviceNameBangla: 'অ্যাম্বুলেন্স', serviceNameEnglish: 'Ambulance', serviceType: 'স্বাস্থ্য', serviceNumber: '1994-999999' },
+  { serviceIcon: '../assets/emergency.png', serviceNameBangla: 'নারী ও শিশু সহায়তাস', serviceNameEnglish: 'Women & Child Helpline', serviceType: 'সহায়তা', serviceNumber: '109' },
+  { serviceIcon: '../assets/emergency.png', serviceNameBangla: 'দুদক', serviceNameEnglish: 'Anti-Corruption', serviceType: 'সরকারি', serviceNumber: '106' },
+  { serviceIcon: '../assets/electricity.png', serviceNameBangla: 'বিদ্যুৎ বিভ্রাট', serviceNameEnglish: 'Electricity Outage', serviceType: 'বিদ্যুৎ', serviceNumber: '16216' },
+  { serviceIcon: '../assets/brac.png', serviceNameBangla: '্র্যাক', serviceNameEnglish: 'Brac', serviceType: 'এনজিও', serviceNumber: '16445' },
+  { serviceIcon: '../assets/railway.png', serviceNameBangla: 'বাংলাদেশ রেলওয়ে', serviceNameEnglish: 'Bangladesh Railway', serviceType: 'পরিবহন', serviceNumber: '163' },
+]
 
 
 
@@ -52,30 +38,7 @@ closeBtn.addEventListener("click", () => {
 });
 
 
-document.getElementById('clearCallHistory').addEventListener('click',()=>{
-  document.querySelector('.call-history').innerHTML=''
-})
 
-function addCallHistory(serviceName, serviceNumber) {
-
-  let history = document.createElement('div')
-  history.className = 'bg-[#FAFAFA] w-full max-h-[86px] mb-2 p-4 flex justify-between items-center'
-
-  const now = new Date()
-
-  const time = now.toLocaleTimeString('en-US', { hour12: true })
-
-  history.innerHTML = `<div>
-                <h2 class="text-[14px]">${serviceName}</h2>
-                <p class="text-[16px] text-gray-400">${serviceNumber}</p>
-              </div>
-              <h5 class="text-[16px] text-gray-700">${time}</h5>`
-
-  document.querySelector('.call-history ').appendChild(history)
-
-
-
-}
 
 
 function initCard() {
@@ -124,62 +87,6 @@ function initCard() {
 initCard()
 
 
-
-cardContainer.addEventListener('click', (e) => {
-  console.log(e.target,)
-
-  if (e.target.closest('.heart')) {
-    heartCount.innerText = Number(heartCount.innerText) + 1
-  }
-
-
-  if (e.target.closest('.copy-btn')) {
-    let cardDetail = e.target.closest('.card')
-
-    let serviceNameBangla = cardDetail.querySelector('h2').innerText
-
-    let icon = cardDetail.querySelector('img').src
-
-    let serviceType = cardDetail.querySelector('span').innerText
-
-    let serviceNumber = cardDetail.querySelector('h1').innerText
-    console.log(serviceNameBangla, serviceNumber, serviceType)
-    navigator.clipboard.writeText(serviceNumber);
-    copyCount.innerText = Number(copyCount.innerText) + 1
-    showCustomAlert(icon, serviceNameBangla, serviceNumber, 'Copied ')
-
-  }
-
-
-  if (e.target.closest('.call-btn')) {
-
-    if (Number(coinCount.innerText) > 19) {
-      let cardDetail = e.target.closest('.card')
-
-      let serviceNameBangla = cardDetail.querySelector('h2').innerText
-
-      let icon = cardDetail.querySelector('img').src
-
-      let serviceType = cardDetail.querySelector('span').innerText
-
-      let serviceNumber = cardDetail.querySelector('h1').innerText
-      coinCount.innerText = Number(coinCount.innerText) - 20
-      console.log(serviceNameBangla, serviceNumber, serviceType)
-      showCustomAlert(icon, serviceNameBangla, serviceNumber, 'Calling To')
-      addCallHistory(serviceNameBangla, serviceNumber)
-
-
-    } else {
-      showCustomAlert('../assets/error.png', "Balance", coinCount.innerText, 'You cannot make a call because your')
-    }
-
-
-
-
-
-
-  }
-})
 
 
 
