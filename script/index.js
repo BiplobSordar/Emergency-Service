@@ -86,6 +86,35 @@ function initCard() {
 
 initCard()
 
+
+
+
+document.getElementById('clearCallHistory').addEventListener('click',()=>{
+  document.querySelector('.call-history').innerHTML=''
+})
+
+function addCallHistory(serviceName, serviceNumber) {
+
+  let history = document.createElement('div')
+  history.className = 'bg-[#FAFAFA] w-full max-h-[86px] mb-2 p-4 flex justify-between items-center'
+
+  const now = new Date()
+
+  const time = now.toLocaleTimeString('en-US', { hour12: true })
+
+  history.innerHTML = `<div>
+                <h2 class="text-[14px]">${serviceName}</h2>
+                <p class="text-[16px] text-gray-400">${serviceNumber}</p>
+              </div>
+              <h5 class="text-[16px] text-gray-700">${time}</h5>`
+
+  document.querySelector('.call-history ').appendChild(history)
+
+
+
+}
+
+
 function showCustomAlert(icon, name, type, message) {
   document.getElementById("serviceIcon").src = icon;
   document.getElementById("serviceName").innerText = message + ' ' + name;
@@ -102,9 +131,8 @@ customAlertBtn.addEventListener("click", () => {
 
 
 
-
 cardContainer.addEventListener('click', (e) => {
- 
+  console.log(e.target,)
 
   if (e.target.closest('.heart')) {
     heartCount.innerText = Number(heartCount.innerText) + 1
@@ -121,9 +149,11 @@ cardContainer.addEventListener('click', (e) => {
     let serviceType = cardDetail.querySelector('span').innerText
 
     let serviceNumber = cardDetail.querySelector('h1').innerText
-    console.log(serviceNameBangla, serviceNumber, serviceType)
+   
     navigator.clipboard.writeText(serviceNumber)
+
     copyCount.innerText = Number(copyCount.innerText) + 1
+
     showCustomAlert(icon, serviceNameBangla, serviceNumber, 'Copied ')
 
   }
@@ -141,17 +171,17 @@ cardContainer.addEventListener('click', (e) => {
       let serviceType = cardDetail.querySelector('span').innerText
 
       let serviceNumber = cardDetail.querySelector('h1').innerText
+
       coinCount.innerText = Number(coinCount.innerText) - 20
-      console.log(serviceNameBangla, serviceNumber, serviceType)
-      showCustomAlert(icon, serviceNameBangla, serviceNumber, 'Calling To')
      
+      showCustomAlert(icon, serviceNameBangla, serviceNumber, 'Calling To')
+      
+      addCallHistory(serviceNameBangla, serviceNumber)
 
 
-    } 
-
-
-
-
+    } else {
+      showCustomAlert('../assets/error.png', "Balance", coinCount.innerText, 'You cannot make a call because your')
+    }
 
 
   }
