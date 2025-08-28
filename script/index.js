@@ -86,6 +86,81 @@ function initCard() {
 
 initCard()
 
+function showCustomAlert(icon, name, type, message) {
+  document.getElementById("serviceIcon").src = icon;
+  document.getElementById("serviceName").innerText = message + ' ' + name;
+  document.getElementById("serviceNumber").innerText = type;
+  document.getElementById("customAlert").classList.remove("hidden");
+}
+
+customAlertBtn.addEventListener("click", () => {
+  customAlert.classList.add("hidden");
+});
+
+
+
+
+
+
+
+cardContainer.addEventListener('click', (e) => {
+ 
+
+  if (e.target.closest('.heart')) {
+    heartCount.innerText = Number(heartCount.innerText) + 1
+  }
+
+
+  if (e.target.closest('.copy-btn')) {
+    let cardDetail = e.target.closest('.card')
+
+    let serviceNameBangla = cardDetail.querySelector('h2').innerText
+
+    let icon = cardDetail.querySelector('img').src
+
+    let serviceType = cardDetail.querySelector('span').innerText
+
+    let serviceNumber = cardDetail.querySelector('h1').innerText
+    console.log(serviceNameBangla, serviceNumber, serviceType)
+    navigator.clipboard.writeText(serviceNumber)
+    copyCount.innerText = Number(copyCount.innerText) + 1
+    showCustomAlert(icon, serviceNameBangla, serviceNumber, 'Copied ')
+
+  }
+
+
+  if (e.target.closest('.call-btn')) {
+
+    if (Number(coinCount.innerText) > 19) {
+      let cardDetail = e.target.closest('.card')
+
+      let serviceNameBangla = cardDetail.querySelector('h2').innerText
+
+      let icon = cardDetail.querySelector('img').src
+
+      let serviceType = cardDetail.querySelector('span').innerText
+
+      let serviceNumber = cardDetail.querySelector('h1').innerText
+      coinCount.innerText = Number(coinCount.innerText) - 20
+      console.log(serviceNameBangla, serviceNumber, serviceType)
+      showCustomAlert(icon, serviceNameBangla, serviceNumber, 'Calling To')
+     
+
+
+    } 
+
+
+
+
+
+
+  }
+})
+
+
+
+
+
 
 
 
