@@ -12,7 +12,7 @@
 <title>Document</title>
 </head>
 
-<body class="bg-[#F5FFF6]">
+<body class="bg-[#F5FFF6] w-full ">
 
   
   <div id="customAlert" class="fixed inset-0 flex items-start justify-center bg-transparent bg-opacity-50 hidden z-90">
@@ -39,9 +39,9 @@
 
 
 
-  <header class="max-w-[1920px]">
+  <header class="w-full  bg-green-500 ">
     <nav
-      class="w-full flex flex-col h-[130px] justify-center gap-2 md:px-10  sm:flex-row  items-center  sm:justify-between sm:items-center px-5 sm:h-[100px]  bg-white">
+      class="w-full  flex flex-col h-[130px] justify-center gap-2 md:px-20  sm:flex-row  items-center  sm:justify-between sm:items-center px-5 sm:h-[100px]  bg-white">
       <div class="flex gap-2 items-center"><img src="./assets/logo.png" class="h-[50px] w-[50px]" alt="Logo">
         <h1 class=" text-sm md:text-[20px] lg:text-xl  font-bold max-w-[135px] text-[#006747]">Emergency Service</h1>
       </div>
@@ -58,7 +58,7 @@
         <li
           class="h-[50px]  w-[123px] bg-[rgba(65,255,107,0.1)] text-xl font-bold   rounded-2xl flex justify-center items-center">
           <span class="mr-2" id="coinCount">100</span> <img class="h-[30px] w-[30px]"
-            src="./assets//icons/icons8-coin-48.png" alt="Coin Icon">
+            src="./assets/coin.png" alt="Coin Icon">
         </li>
 
         <li
@@ -92,9 +92,9 @@
 
 
 
-  <main class="w-full bg-[#F5FFF6] max-w-[1920px]">
+  <main class="w-full bg-[#F5FFF6] ">
 
-    <section class="w-[98%]relative mx-auto mt-10 flex gap-2 md:px-10">
+    <section class="w-[98%] relative mx-auto mt-10 flex gap-2 md:px-10">
 
       <!-- first section-->
       <section class="w-full lg:w-[80%]  rounded-lg px-4 md:px-0">
@@ -116,11 +116,11 @@
             <i id="close-btn" class="fa-solid fa-x font-bold text-[28px] hover:text-[#00A63E] "></i>
           </div>
 
-          <div class="flex justify-between items-center p-2 md:p-4 ">
-            <h2 class="text-[18px] font-semibold"><i class="fa-solid fa-clock "></i> <span class="text-[#111111]">Call
+          <div class="flex justify-between  flex-col gap-4 sm:flex-row items-center  md:p-4 ">
+            <h2 class="text-[22px] sm:text-[18px] font-semibold"><i class="fa-solid fa-clock "></i> <span class="text-[#111111]">Call
                 History</span></h2>
             <button id="clearCallHistory"
-              class="bg-[#00A63E] rounded-2xl w-[120px]  py-3 text-white font-semibold ">Clear</button>
+              class="bg-[#00A63E] w-[70%] rounded-2xl sm:w-[120px]  py-3 text-white font-semibold ">Clear</button>
           </div>
 
 

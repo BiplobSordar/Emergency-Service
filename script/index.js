@@ -60,9 +60,9 @@ function initCard() {
 
     <div class="mt-4 text-start">
       <h2 class="text-xl font-bold mb-3">${services[i].serviceNameBangla}</h2>
-      <p class="text-sm text-gray-500 mb-3">${services[i].serviceNameEnglish}</p>
+      <p class="text-[17px] font-semibold text-gray-500 mb-3">${services[i].serviceNameEnglish}</p>
       <h1 class="text-4xl font-bold mt-3">${services[i].serviceNumber}</h1>
-      <span class="bg-gray-300 min-w-[100px] text-center text-gray-500 p-3 rounded-full text-xs mt-5 inline-block">${services[i].serviceType}</span>
+      <span class="bg-gray-300 min-w-[100px] text-center font-semibold text-gray-500 p-3 rounded-full text-xs mt-5 inline-block">${services[i].serviceType}</span>
     </div>
 
     <div class="mt-5 flex justify-center gap-3">
@@ -132,7 +132,6 @@ customAlertBtn.addEventListener("click", () => {
 
 
 cardContainer.addEventListener('click', (e) => {
-  console.log(e.target,)
 
   if (e.target.closest('.heart')) {
     heartCount.innerText = Number(heartCount.innerText) + 1
@@ -146,7 +145,7 @@ cardContainer.addEventListener('click', (e) => {
 
     let icon = cardDetail.querySelector('img').src
 
-    let serviceType = cardDetail.querySelector('span').innerText
+ 
 
     let serviceNumber = cardDetail.querySelector('h1').innerText
    
@@ -168,7 +167,7 @@ cardContainer.addEventListener('click', (e) => {
 
       let icon = cardDetail.querySelector('img').src
 
-      let serviceType = cardDetail.querySelector('span').innerText
+     
 
       let serviceNumber = cardDetail.querySelector('h1').innerText
 
