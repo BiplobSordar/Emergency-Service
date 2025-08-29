@@ -16,15 +16,15 @@ const buttons = document.querySelectorAll('.copy-btn')
 
 
 let services = [
-  { serviceIcon: '../assets/emergency.png', serviceNameBangla: 'জাতীয় জরুরি সেবা', serviceNameEnglish: 'National Emergency', serviceType: 'সার্বজনীন', serviceNumber: '999' },
-  { serviceIcon: '../assets/police.png', serviceNameBangla: 'পুলিশ', serviceNameEnglish: 'Police', serviceType: 'পুলিশ', serviceNumber: '999' },
-  { serviceIcon: '../assets/fire-service.png', serviceNameBangla: 'ফায়ার সার্ভিস', serviceNameEnglish: 'Fire Service', serviceType: 'ফায়ার', serviceNumber: '999' },
-  { serviceIcon: '../assets/ambulance.png', serviceNameBangla: 'অ্যাম্বুলেন্স', serviceNameEnglish: 'Ambulance', serviceType: 'স্বাস্থ্য', serviceNumber: '1994-999999' },
-  { serviceIcon: '../assets/emergency.png', serviceNameBangla: 'নারী ও শিশু সহায়তাস', serviceNameEnglish: 'Women & Child Helpline', serviceType: 'সহায়তা', serviceNumber: '109' },
-  { serviceIcon: '../assets/emergency.png', serviceNameBangla: 'দুদক', serviceNameEnglish: 'Anti-Corruption', serviceType: 'সরকারি', serviceNumber: '106' },
-  { serviceIcon: '../assets/electricity.png', serviceNameBangla: 'বিদ্যুৎ বিভ্রাট', serviceNameEnglish: 'Electricity Outage', serviceType: 'বিদ্যুৎ', serviceNumber: '16216' },
-  { serviceIcon: '../assets/brac.png', serviceNameBangla: '্র্যাক', serviceNameEnglish: 'Brac', serviceType: 'এনজিও', serviceNumber: '16445' },
-  { serviceIcon: '../assets/railway.png', serviceNameBangla: 'বাংলাদেশ রেলওয়ে', serviceNameEnglish: 'Bangladesh Railway', serviceType: 'পরিবহন', serviceNumber: '163' },
+  { serviceIcon: './assets/emergency.png', serviceNameBangla: 'জাতীয় জরুরি সেবা', serviceNameEnglish: 'National Emergency', serviceType: 'সার্বজনীন', serviceNumber: '999' },
+  { serviceIcon: './assets/police.png', serviceNameBangla: 'পুলিশ', serviceNameEnglish: 'Police', serviceType: 'পুলিশ', serviceNumber: '999' },
+  { serviceIcon: './assets/fire-service.png', serviceNameBangla: 'ফায়ার সার্ভিস', serviceNameEnglish: 'Fire Service', serviceType: 'ফায়ার', serviceNumber: '999' },
+  { serviceIcon: './assets/ambulance.png', serviceNameBangla: 'অ্যাম্বুলেন্স', serviceNameEnglish: 'Ambulance', serviceType: 'স্বাস্থ্য', serviceNumber: '1994-999999' },
+  { serviceIcon: './assets/emergency.png', serviceNameBangla: 'নারী ও শিশু সহায়তাস', serviceNameEnglish: 'Women & Child Helpline', serviceType: 'সহায়তা', serviceNumber: '109' },
+  { serviceIcon: './assets/emergency.png', serviceNameBangla: 'দুদক', serviceNameEnglish: 'Anti-Corruption', serviceType: 'সরকারি', serviceNumber: '106' },
+  { serviceIcon: './assets/electricity.png', serviceNameBangla: 'বিদ্যুৎ বিভ্রাট', serviceNameEnglish: 'Electricity Outage', serviceType: 'বিদ্যুৎ', serviceNumber: '16216' },
+  { serviceIcon: './assets/brac.png', serviceNameBangla: '্র্যাক', serviceNameEnglish: 'Brac', serviceType: 'এনজিও', serviceNumber: '16445' },
+  { serviceIcon: './assets/railway.png', serviceNameBangla: 'বাংলাদেশ রেলওয়ে', serviceNameEnglish: 'Bangladesh Railway', serviceType: 'পরিবহন', serviceNumber: '163' },
 ]
 
 
