@@ -77,6 +77,8 @@ function initCard() {
     </div>
   `;
 
+  console.log(cardBody)
+
     cardContainer.appendChild(cardBody)
 
   }
@@ -179,7 +181,7 @@ cardContainer.addEventListener('click', (e) => {
 
 
     } else {
-      showCustomAlert('../assets/error.png', "Balance", coinCount.innerText, 'You cannot make a call because your')
+      showCustomAlert('./assets/error.png', "Balance", coinCount.innerText, 'You cannot make a call because your')
     }
 
 
