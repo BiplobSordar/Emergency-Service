@@ -77,7 +77,7 @@ function initCard() {
     </div>
   `;
 
-  console.log(cardBody)
+
 
     cardContainer.appendChild(cardBody)
 
